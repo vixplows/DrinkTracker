@@ -12,11 +12,9 @@ import java.util.HashMap;
 
 public class DrinkEventCollection {
 
-    HashMap<String, ArrayList<DrinkEvent>> drinkEventCollection;
+    private HashMap<String, ArrayList<DrinkEvent>> drinkEventCollection = new HashMap<String, ArrayList<DrinkEvent>>();
 
-    public void DrinkEventCollection() {
-
-        this.drinkEventCollection = new HashMap<String, ArrayList<DrinkEvent>>();
+    public DrinkEventCollection() {
 
         DrinkEvent drinkEvent;
         DrinkEvent drinkEventA;
@@ -27,20 +25,35 @@ public class DrinkEventCollection {
         drinkA = new Drink(DrinkType.BEER, 5.00, 330, 5.0);
 
         Calendar date = new GregorianCalendar();
+        Calendar dateA = new GregorianCalendar();
         date.set(2017, 6, 10);
+        dateA.set(2017, 6, 9);
 
         drinkEvent = new DrinkEvent(date, drink);
-        drinkEventA = new DrinkEvent(date, drinkA);
+        drinkEventA = new DrinkEvent(dateA, drinkA);
 
-        drinkEventCollection.put("10-7-2017", new ArrayList<DrinkEvent>(Arrays.asList(drinkEvent, drinkEventA)));
-        drinkEventCollection.put("9-7-2017", new ArrayList<DrinkEvent>(Arrays.asList(drinkEvent)));
+        String key = drinkEvent.getKey();
+        String keyA = drinkEventA.getKey();
+
+        ArrayList<DrinkEvent> eventList = new ArrayList<DrinkEvent>();
+        eventList.add(drinkEvent);
+
+        ArrayList<DrinkEvent> eventListA = new ArrayList<DrinkEvent>();
+        eventList.add(drinkEventA);
+
+        this.drinkEventCollection.put(key, eventList);
+        this.drinkEventCollection.put(keyA, eventListA);
     }
 
-
-    public int getCollectionSize() {
-        return drinkEventCollection.size();
+    public void addDrinkEvent(DrinkEvent event) {
+        //check if the key exists in the HashMap
+        //if not then initialise a new ArrayList
+        //add the DrinkEvent to the ArrayList
     }
 
+    public HashMap getCollection() {
+        return this.drinkEventCollection;
+    }
 }
 
 
