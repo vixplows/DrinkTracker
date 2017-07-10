@@ -25,4 +25,8 @@ public class Drink {
     public double getCost() {
         return cost;
     }
+
+    public double getVolume() {
+        return volume;
+    }
 }
