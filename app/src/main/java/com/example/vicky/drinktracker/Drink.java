@@ -45,4 +45,8 @@ public class Drink {
     public void setVolume(double volume) {
         this.volume = volume;
     }
+
+    public void setStrength(double strength) {
+        this.strength = strength;
+    }
 }
