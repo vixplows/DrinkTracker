@@ -22,4 +22,9 @@ public class DrinkTest {
         assertEquals(DrinkType.WINE, drink.getType());
     }
 
+    @Test
+    public void getCostTest() {
+        assertEquals(4.50, drink.getCost(), .01);
+    }
+
 }

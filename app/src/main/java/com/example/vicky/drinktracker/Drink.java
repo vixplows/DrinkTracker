@@ -21,4 +21,8 @@ public class Drink {
     public DrinkType getType() {
         return type;
     }
+
+    public double getCost() {
+        return cost;
+    }
 }
