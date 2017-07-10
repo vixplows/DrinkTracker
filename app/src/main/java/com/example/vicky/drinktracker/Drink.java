@@ -49,4 +49,5 @@ public class Drink {
     public void setStrength(double strength) {
         this.strength = strength;
     }
+
 }
