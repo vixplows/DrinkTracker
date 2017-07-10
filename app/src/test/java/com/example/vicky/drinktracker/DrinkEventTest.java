@@ -47,4 +47,10 @@ public class DrinkEventTest {
         assertEquals(250, volume, .01);
         assertEquals(12.5, strength, .01);
     }
+
+    @Test
+    public void getKey() {
+        String key = drinkEvent.getKey();
+        assertEquals("10/07/2017", key);
+    }
 }

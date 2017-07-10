@@ -1,5 +1,6 @@
 package com.example.vicky.drinktracker;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
@@ -22,5 +23,11 @@ public class DrinkEvent {
 
     public Drink getDrink() {
         return drink;
+    }
+
+    public String getKey() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String key = dateFormat.format(this.date.getTime());
+        return key;
     }
 }
