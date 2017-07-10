@@ -41,4 +41,8 @@ public class Drink {
     public void setCost(double cost) {
         this.cost = cost;
     }
+
+    public void setVolume(double volume) {
+        this.volume = volume;
+    }
 }

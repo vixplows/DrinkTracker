@@ -49,4 +49,10 @@ public class DrinkTest {
         assertEquals(3.75, drink.getCost(), .01);
     }
 
+    @Test
+    public void setVolumeTest() {
+        drink.setVolume(25);
+        assertEquals(25, drink.getVolume(), .01);
+    }
+
 }
