@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DrinkTracker</string>
+    <string name="add_drink">Add Drink</string>
 </resources>
