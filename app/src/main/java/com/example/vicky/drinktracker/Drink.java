@@ -29,4 +29,8 @@ public class Drink {
     public double getVolume() {
         return volume;
     }
+
+    public double getStrength() {
+        return strength;
+    }
 }

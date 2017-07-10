@@ -32,4 +32,9 @@ public class DrinkTest {
         assertEquals(250, drink.getVolume(), .01);
     }
 
+    @Test
+    public void getStrengthTest() {
+        assertEquals(12.5, drink.getStrength(), .01);
+    }
+
 }
