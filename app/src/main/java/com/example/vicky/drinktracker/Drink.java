@@ -18,5 +18,7 @@ public class Drink {
         this.strength = strength;
     }
 
-
+    public DrinkType getType() {
+        return type;
+    }
 }
