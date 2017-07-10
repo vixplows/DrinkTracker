@@ -34,4 +34,17 @@ public class DrinkEventTest {
         assertEquals(6, month);
         assertEquals(2017, year);
     }
+
+    @Test
+    public void getDrink() {
+        Drink drink = drinkEvent.getDrink();
+        DrinkType type = drink.getType();
+        double cost = drink.getCost();
+        double volume = drink.getVolume();
+        double strength = drink.getStrength();
+        assertEquals(DrinkType.WINE, type);
+        assertEquals(4.50, cost, .01);
+        assertEquals(250, volume, .01);
+        assertEquals(12.5, strength, .01);
+    }
 }

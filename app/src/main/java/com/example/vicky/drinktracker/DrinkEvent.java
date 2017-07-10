@@ -19,4 +19,8 @@ public class DrinkEvent {
     public Calendar getDate() {
         return date;
     }
+
+    public Drink getDrink() {
+        return drink;
+    }
 }
