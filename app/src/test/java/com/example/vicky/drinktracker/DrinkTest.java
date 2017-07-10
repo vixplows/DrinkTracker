@@ -43,4 +43,10 @@ public class DrinkTest {
         assertEquals(DrinkType.SPIRIT, drink.getType());
     }
 
+    @Test
+    public void setCostTest() {
+        drink.setCost(3.75);
+        assertEquals(3.75, drink.getCost(), .01);
+    }
+
 }

@@ -37,4 +37,8 @@ public class Drink {
     public void setType(DrinkType type) {
         this.type = type;
     }
+
+    public void setCost(double cost) {
+        this.cost = cost;
+    }
 }
