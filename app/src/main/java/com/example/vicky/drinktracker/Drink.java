@@ -33,4 +33,8 @@ public class Drink {
     public double getStrength() {
         return strength;
     }
+
+    public void setType(DrinkType type) {
+        this.type = type;
+    }
 }

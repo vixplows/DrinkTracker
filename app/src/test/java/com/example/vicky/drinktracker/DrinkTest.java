@@ -37,4 +37,10 @@ public class DrinkTest {
         assertEquals(12.5, drink.getStrength(), .01);
     }
 
+    @Test
+    public void setTypeTest() {
+        drink.setType(DrinkType.SPIRIT);
+        assertEquals(DrinkType.SPIRIT, drink.getType());
+    }
+
 }
