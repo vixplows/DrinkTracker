@@ -41,7 +41,7 @@ public class DrinkEventCollectionTest {
         drinkEventB = new DrinkEvent(dateA, drinkB);
     }
 
-
+//TODO tests failing now as data added to DrinkEventCollection to populate mainactivity page
     @Test
     public void canCheckCollectionSize() {
         drinkEventCollection.addDrinkEvent(drinkEvent);

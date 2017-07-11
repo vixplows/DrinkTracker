@@ -61,6 +61,10 @@ public class AddDrinkActivity extends AppCompatActivity implements AdapterView.O
         Intent intent = new Intent(AddDrinkActivity.this, AddDrinkActivity.class);
         startActivity(intent);
 
+        // TODO need to add calculate method here? OR move to DrinkEventDetails activity
+        // so not part of the form. If move - remove references to widgets in this activity
+        // and also from the xml file
+
         Log.d(getClass().toString(), "onCalculateUnitsButtonClicked was called");
 
     }
@@ -109,6 +113,7 @@ public class AddDrinkActivity extends AppCompatActivity implements AdapterView.O
 
     }
 
+    //TODO This is to get back an enum from the spinner - where using it?
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String value = (String) adapterView.getItemAtPosition(i);

@@ -37,7 +37,7 @@ public class DrinkEventCollection {
         drinkEventCollection.put("20/11/2017", drList);
         drinkEventCollection.put("22/11/2017", drList);
 
-
+//TODO remove above data once app is able to persist data input
     }
 
     public void addDrinkEvent(DrinkEvent drinkEvent) {
