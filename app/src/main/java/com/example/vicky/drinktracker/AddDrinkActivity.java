@@ -24,8 +24,6 @@ public class AddDrinkActivity extends AppCompatActivity implements AdapterView.O
     EditText addCostEditText;
     EditText addVolumeEditText;
     EditText addStrengthEditText;
-    Button calculateUnitsButton;
-    TextView unitsTextView;
     Button submitDrinkButton;
     DrinkType selectedDrinkType;
 
@@ -39,8 +37,6 @@ public class AddDrinkActivity extends AppCompatActivity implements AdapterView.O
         addCostEditText = (EditText)findViewById(R.id.cost);
         addVolumeEditText = (EditText)findViewById(R.id.volume);
         addStrengthEditText = (EditText)findViewById(R.id.strength);
-        calculateUnitsButton = (Button)findViewById(R.id.calculate_units);
-        unitsTextView = (TextView)findViewById(R.id.units);
         submitDrinkButton = (Button)findViewById(R.id.submit_drink);
 
         selectTypeSpinner.setOnItemSelectedListener(this);
@@ -61,7 +57,7 @@ public class AddDrinkActivity extends AppCompatActivity implements AdapterView.O
         Intent intent = new Intent(AddDrinkActivity.this, AddDrinkActivity.class);
         startActivity(intent);
 
-        // TODO need to add calculate method here? OR move to DrinkEventDetails activity
+        // TODO need to add calculate method here? OR move to DrinkEvent Details activity
         // so not part of the form. If move - remove references to widgets in this activity
         // and also from the xml file
 
@@ -80,9 +76,8 @@ public class AddDrinkActivity extends AppCompatActivity implements AdapterView.O
         editor.putInt("Type", selectedPosition);
         editor.putString("Volume", addVolumeEditText.getText().toString());
         editor.putString("Strength", addStrengthEditText.getText().toString());
-        editor.putString("Units", unitsTextView.getText().toString());
 
-        //TODO where commiting to - need to add it to DrinkEventCollection using the .add method?
+        //TODO where commiting to - DrinkEventSdetails? using the .add method?
         editor.commit();
 
 
@@ -92,7 +87,7 @@ public class AddDrinkActivity extends AppCompatActivity implements AdapterView.O
     }
 
     // Print out saved data
-    public void showDrinkEventDetails(View view) {
+    public void showDetails(View view) {
         SharedPreferences sharedPref = getSharedPreferences("drinkEventDetails", Context.MODE_PRIVATE);
 
         String date = sharedPref.getString ("Date", "");
@@ -106,7 +101,7 @@ public class AddDrinkActivity extends AppCompatActivity implements AdapterView.O
     }
 
     public void onSubmitDrinkEventButtonClicked(View button) {
-        Intent intent = new Intent(AddDrinkActivity.this, MainActivity.class);
+        Intent intent = new Intent(AddDrinkActivity.this, DrinkEventDetails.class);
         startActivity(intent);
 
         Log.d(getClass().toString(), "onSubmitDrinkEventButtonClicked was called");
