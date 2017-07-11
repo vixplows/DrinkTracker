@@ -54,14 +54,7 @@ public class DrinkEventDetails extends AppCompatActivity {
         displayCost.setText("Cost: £" + cost);
         displayVolume.setText("Volume: " + volume +"ml");
         displayStrength.setText("Strength: " + strength +"abv");
-        displayUnits.setText("Units: " );
+        displayUnits.setText("Units: " + units);
 
     }
 }
-
-//TODO display the extras send with the intent when submit add drink event
-//intent.putExtra("date", date);
-//        intent.putExtra("type", this.selectedDrinkType);
-//        intent.putExtra("cost", cost);
-//        intent.putExtra("volume", volume);
-//        intent.putExtra("strength", strength);

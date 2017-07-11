@@ -91,7 +91,7 @@ public class AddDrinkActivity extends AppCompatActivity implements AdapterView.O
         Intent intent = new Intent(AddDrinkActivity.this, DrinkEventDetails.class);
         Bundle extras = new Bundle();
 
-        extras.putString("date", String.valueOf(addDateEditText));
+        extras.putString("date", String.valueOf(date));
         extras.putString("type", String.valueOf(this.selectedDrinkType));
         extras.putString("cost", String.valueOf(cost));
         extras.putString("volume", String.valueOf(volume));
