@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +20,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         addDrinkButton = (Button)findViewById(R.id.add_drink_button);
+
+        ListView l = (ListView) findViewById(R.id.drinks_list);
+
+        DrinkEventCollection dr = new DrinkEventCollection();
+        ArrayList<String> myDrinks = dr.getList();
+
+        DrinkEventCollectionAdapter deca = new DrinkEventCollectionAdapter(this, myDrinks);
+        l.setAdapter(deca);
     }
 
     public void onAddDrinkButtonClicked(View button) {
