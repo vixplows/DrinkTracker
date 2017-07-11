@@ -2,6 +2,8 @@ package com.example.vicky.drinktracker;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
 
 import static android.R.attr.value;
 
@@ -33,12 +35,14 @@ public class DrinkEventCollection {
         return listSize;
     }
 
-//    public ArrayList<DrinkEvent> getDateDrinks() {
-//        // aim to display date with total number of DrinkEvents on that day
-        // first need method that provides TotalNumberOfDrinkEvents for a single date
-        // and then method that can loop through so that for keys that exist in hashmap return size of the value(ArrayList)
+    public ArrayList<DrinkEvent> getListDateDrinks() {
+        // display date with total number of DrinkEvents as list [need new drinkDateList class? for this?]
+        // need method that provides TotalNumberOfDrinkEvents for a single date, which can be got from the size of the ArrayList sotred with that key/date
+        // need to then loop throught the current hashmap to return the date(key) and the size of the associatd value(ArrayList)
 
-//    }
+    }
+
+
 }
 
 
