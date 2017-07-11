@@ -18,8 +18,10 @@ public class DrinkEventCollectionTest {
     DrinkEventCollection drinkEventCollection;
     DrinkEvent drinkEvent;
     DrinkEvent drinkEventA;
+    DrinkEvent drinkEventB;
     Drink drink;
     Drink drinkA;
+    Drink drinkB;
 
     @Before
     public void before() {
@@ -27,6 +29,7 @@ public class DrinkEventCollectionTest {
 
         drink = new Drink(DrinkType.WINE, 4.50, 250, 12.5);
         drinkA = new Drink(DrinkType.BEER, 5.00, 330, 5.0);
+        drinkB = new Drink(DrinkType.SPIRIT, 3.50, 50, 40);
 
         Calendar date = new GregorianCalendar();
         Calendar dateA = new GregorianCalendar();
@@ -35,6 +38,7 @@ public class DrinkEventCollectionTest {
 
         drinkEvent = new DrinkEvent(date, drink);
         drinkEventA = new DrinkEvent(dateA, drinkA);
+        drinkEventB = new DrinkEvent(dateA, drinkB);
     }
 
 
@@ -44,6 +48,14 @@ public class DrinkEventCollectionTest {
         drinkEventCollection.addDrinkEvent(drinkEventA);
         HashMap allDrinkEvents = drinkEventCollection.getCollection();
         assertEquals(2, allDrinkEvents.size());
+    }
+
+    @Test
+    public void canGetTotalDrinkEventsOnDate() {
+        drinkEventCollection.addDrinkEvent(drinkEventA);
+        drinkEventCollection.addDrinkEvent(drinkEventB);
+        String key = drinkEventA.getKey();
+        assertEquals(2, drinkEventCollection.getTotalDrinkEventsOnDate(key));
     }
 
 }
