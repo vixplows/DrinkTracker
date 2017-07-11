@@ -8,6 +8,6 @@ public class Drink_Date_List_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drink__date__list_);
+        setContentView(R.layout.drinks_list_);
     }
 }
