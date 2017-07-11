@@ -35,12 +35,12 @@ public class DrinkEventCollection {
         return listSize;
     }
 
-    public ArrayList<DrinkEvent> getListDateDrinks() {
+    //public ArrayList<DrinkEvent> getListDateDrinks() {
         // display date with total number of DrinkEvents as list [need new drinkDateList class? for this?]
         // need method that provides TotalNumberOfDrinkEvents for a single date, which can be got from the size of the ArrayList sotred with that key/date
         // need to then loop throught the current hashmap to return the date(key) and the size of the associatd value(ArrayList)
 
-    }
+    //}
 
 
 }
