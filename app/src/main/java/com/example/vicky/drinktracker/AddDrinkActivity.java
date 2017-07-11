@@ -87,13 +87,23 @@ public class AddDrinkActivity extends AppCompatActivity implements AdapterView.O
         Toast.makeText(this, "saved", Toast.LENGTH_LONG).show();
 
         Intent intent = new Intent(AddDrinkActivity.this, DrinkEventDetails.class);
+        Bundle extras = new Bundle();
+
+        extras.putString("date", String.valueOf(date));
+        extras.putString("type", String.valueOf(this.selectedDrinkType));
+        extras.putString("cost", String.valueOf(cost));
+        extras.putString("volume", String.valueOf(volume));
+        extras.putString("strength", String.valueOf(strength));
+
+        intent.putExtras(extras);
+
         startActivity(intent);
 
         Log.d(getClass().toString(), "onSubmitDrinkEventButtonClicked was called");
 
     }
 
-    //TODO This is to get back an enum from the spinner - where using it?
+    // This sets string selected from the spinner to enum
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String value = (String) adapterView.getItemAtPosition(i);
