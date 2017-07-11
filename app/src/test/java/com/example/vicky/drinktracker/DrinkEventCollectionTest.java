@@ -58,4 +58,10 @@ public class DrinkEventCollectionTest {
         assertEquals(2, drinkEventCollection.getTotalDrinkEventsOnDate(key));
     }
 
+    @Test
+    public void canGetList() {
+        drinkEventCollection.addDrinkEvent(drinkEventA);
+        assertEquals(1, drinkEventCollection.getList().size());
+    }
+
 }
