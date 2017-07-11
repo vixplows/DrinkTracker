@@ -1,10 +1,12 @@
 package com.example.vicky.drinktracker;
 
+import java.io.Serializable;
+
 /**
  * Created by vicky on 10/07/2017.
  */
 
-public class Drink {
+public class Drink implements Serializable {
 
     private DrinkType type;
     private double cost;
@@ -48,6 +50,11 @@ public class Drink {
 
     public void setStrength(double strength) {
         this.strength = strength;
+    }
+
+    public double calculateUnits() {
+        double units = (this.strength * this.volume) / 1000;
+        return units;
     }
 
     // public void calculateUnits(double volume, double strength)

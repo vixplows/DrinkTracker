@@ -61,4 +61,9 @@ public class DrinkTest {
         assertEquals(40, drink.getStrength(), .01);
     }
 
+    @Test
+    public void canCalculateUnits() {
+        assertEquals(3.125, drink.calculateUnits(), .01);
+    }
+
 }
