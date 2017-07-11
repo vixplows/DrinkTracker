@@ -52,8 +52,8 @@ public class DrinkEventDetails extends AppCompatActivity {
         displayDate.setText("Date: " + date);
         displayType.setText("Type: " + type);
         displayCost.setText("Cost: £" + cost);
-        displayVolume.setText("Volume: " + volume +"ml");
-        displayStrength.setText("Strength: " + strength +"abv");
+        displayVolume.setText("Volume: " + volume +" ml");
+        displayStrength.setText("Strength: " + strength +" abv");
         displayUnits.setText("Units: " + units);
 
     }
