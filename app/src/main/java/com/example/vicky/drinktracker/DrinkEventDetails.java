@@ -5,19 +5,19 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.Button;
+
 import android.widget.TextView;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.util.Calendar;
-import java.util.Date;
 
 public class DrinkEventDetails extends AppCompatActivity {
 
-    TextView detailText;
+    TextView displayDate;
+    TextView displayType;
+    TextView displayCost;
+    TextView displayVolume;
+    TextView displayStrength;
+    TextView displayUnits;
 
 
     @Override
@@ -31,19 +31,31 @@ public class DrinkEventDetails extends AppCompatActivity {
         Gson gson = new Gson();
         DrinkEventCollection drinkEventCollection = gson.fromJson(myDrinks, DrinkEventCollection.class);
 
-        detailText = (TextView)findViewById(R.id.details);
+        displayDate = (TextView)findViewById(R.id.display_date);
+        displayType = (TextView)findViewById(R.id.display_type);
+        displayCost = (TextView)findViewById(R.id.display_cost);
+        displayVolume = (TextView)findViewById(R.id.display_volume);
+        displayStrength = (TextView)findViewById(R.id.display_strength);
+        displayUnits = (TextView)findViewById(R.id.display_units);
 
         Intent intent = getIntent();
 
         Bundle extras = intent.getExtras();
 
-//        String date = extras.getString("date");
+        String date = extras.getString("date");
         String type = extras.getString("type");
         String cost = extras.getString("cost");
         String volume = extras.getString("volume");
         String strength = extras.getString("strength");
+        String units = extras.getString("units");
 
-        detailText.setText("Date Event:  " + "You had a drink of " + type + ", " + "that cost £" + cost + ", and was" + volume + "ml" + ", with an abv of " + strength);
+        displayDate.setText("Date: " + date);
+        displayType.setText("Type: " + type);
+        displayCost.setText("Cost: £" + cost);
+        displayVolume.setText("Volume: " + volume +"ml");
+        displayStrength.setText("Strength: " + strength +"abv");
+        displayUnits.setText("Units: " );
+
     }
 }
 

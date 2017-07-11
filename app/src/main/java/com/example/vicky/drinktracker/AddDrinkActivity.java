@@ -33,7 +33,7 @@ public class AddDrinkActivity extends AppCompatActivity implements AdapterView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_drink);
 
-        addDateEditText = (EditText)findViewById(R.id.date);
+        addDateEditText = (EditText)findViewById(R.id.display_date);
         selectTypeSpinner = (Spinner)findViewById(R.id.type);
         addCostEditText = (EditText)findViewById(R.id.cost);
         addVolumeEditText = (EditText)findViewById(R.id.volume);
@@ -64,7 +64,7 @@ public class AddDrinkActivity extends AppCompatActivity implements AdapterView.O
         DrinkEventCollection drinkEventCollection = gson.fromJson(myDrinks, DrinkEventCollection.class);
         if (drinkEventCollection == null) drinkEventCollection = new DrinkEventCollection();
 
-        addDateEditText = (EditText)findViewById(R.id.date);
+        addDateEditText = (EditText)findViewById(R.id.display_date);
         selectTypeSpinner = (Spinner)findViewById(R.id.type);
         addCostEditText = (EditText)findViewById(R.id.cost);
         addVolumeEditText = (EditText)findViewById(R.id.volume);
@@ -75,6 +75,8 @@ public class AddDrinkActivity extends AppCompatActivity implements AdapterView.O
         Double strength = Double.parseDouble(addStrengthEditText.getText().toString());
 
         Drink drink = new Drink(this.selectedDrinkType, cost, volume, strength);
+
+        Double units = drink.calculateUnits();
 
         DrinkEvent drinkEvent = new DrinkEvent(date, drink);
         drinkEventCollection.addDrinkEvent(drinkEvent);
@@ -89,11 +91,12 @@ public class AddDrinkActivity extends AppCompatActivity implements AdapterView.O
         Intent intent = new Intent(AddDrinkActivity.this, DrinkEventDetails.class);
         Bundle extras = new Bundle();
 
-        extras.putString("date", String.valueOf(date));
+        extras.putString("date", String.valueOf(addDateEditText));
         extras.putString("type", String.valueOf(this.selectedDrinkType));
         extras.putString("cost", String.valueOf(cost));
         extras.putString("volume", String.valueOf(volume));
         extras.putString("strength", String.valueOf(strength));
+        extras.putString("units", String.valueOf(units));
 
         intent.putExtras(extras);
 
