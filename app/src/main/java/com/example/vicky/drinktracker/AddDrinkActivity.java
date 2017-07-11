@@ -4,6 +4,7 @@ import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Movie;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,7 +16,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class AddDrinkActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -26,6 +34,7 @@ public class AddDrinkActivity extends AppCompatActivity implements AdapterView.O
     EditText addStrengthEditText;
     Button submitDrinkButton;
     DrinkType selectedDrinkType;
+    GregorianCalendar date = new GregorianCalendar();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +54,8 @@ public class AddDrinkActivity extends AppCompatActivity implements AdapterView.O
     }
 
     public void setDate(int year, int month, int day) {
-        addDateEditText.setText(day + " - " + month + " - " + year);
+        addDateEditText.setText(day + " - " + (month+1) + " - " + year);
+        date.set(year, month, day);
     }
 
     public void openDatePicker(View view) {
@@ -53,54 +63,37 @@ public class AddDrinkActivity extends AppCompatActivity implements AdapterView.O
         datepicker.show(getFragmentManager(), "datePicker");
     }
 
-    public void onCalculateUnitsButtonClicked(View button) {
-        Intent intent = new Intent(AddDrinkActivity.this, AddDrinkActivity.class);
-        startActivity(intent);
+    public void onSubmitDrinkEventButtonClicked(View button) {
 
-        // TODO need to add calculate method here? OR move to DrinkEvent Details activity
-        // so not part of the form. If move - remove references to widgets in this activity
-        // and also from the xml file
+        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        String myDrinks = sharedPref.getString("MyDrinks", "");
 
-        Log.d(getClass().toString(), "onCalculateUnitsButtonClicked was called");
+        Gson gson = new Gson();
+        DrinkEventCollection drinkEventCollection = gson.fromJson(myDrinks, DrinkEventCollection.class);
+        if (drinkEventCollection == null) drinkEventCollection = new DrinkEventCollection();
 
-    }
+        addDateEditText = (EditText)findViewById(R.id.date);
+        selectTypeSpinner = (Spinner)findViewById(R.id.type);
+        addCostEditText = (EditText)findViewById(R.id.cost);
+        addVolumeEditText = (EditText)findViewById(R.id.volume);
+        addStrengthEditText = (EditText)findViewById(R.id.strength);
 
-    // save drink event details
-    public void saveDrinkEventDetails(View view) {
-        SharedPreferences sharedPref = getSharedPreferences("drinkEventDetails", Context.MODE_PRIVATE);
+        Double cost = Double.parseDouble(addCostEditText.getText().toString());
+        Double volume = Double.parseDouble(addVolumeEditText.getText().toString());
+        Double strength = Double.parseDouble(addStrengthEditText.getText().toString());
+
+        Drink drink = new Drink(this.selectedDrinkType, cost, volume, strength);
+
+        DrinkEvent drinkEvent = new DrinkEvent(date, drink);
+        drinkEventCollection.addDrinkEvent(drinkEvent);
 
         SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("MyDrinks", gson.toJson(drinkEventCollection));
 
-        editor.putString("Date", addDateEditText.getText().toString());
-        int selectedPosition = selectTypeSpinner.getSelectedItemPosition();
-        editor.putInt("Type", selectedPosition);
-        editor.putString("Volume", addVolumeEditText.getText().toString());
-        editor.putString("Strength", addStrengthEditText.getText().toString());
+        editor.apply();
 
-        //TODO where commiting to - DrinkEventSdetails? using the .add method?
-        editor.commit();
-
-
-        //TODO is this showing?
         Toast.makeText(this, "saved", Toast.LENGTH_LONG).show();
 
-    }
-
-    // Print out saved data
-    public void showDetails(View view) {
-        SharedPreferences sharedPref = getSharedPreferences("drinkEventDetails", Context.MODE_PRIVATE);
-
-        String date = sharedPref.getString ("Date", "");
-        String type = sharedPref.getString("Type", "");
-        String volume = sharedPref.getString("Volume", "");
-        String strength = sharedPref.getString("Strength", "");
-        String units = sharedPref.getString("Units", "");
-
-        // TODO do this on a new activity page DrinkEventDetails?
-//        eventDetails.setText(Date + "" + Type)
-    }
-
-    public void onSubmitDrinkEventButtonClicked(View button) {
         Intent intent = new Intent(AddDrinkActivity.this, DrinkEventDetails.class);
         startActivity(intent);
 

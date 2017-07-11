@@ -46,7 +46,7 @@ public class DrinkEventCollectionTest {
     public void canCheckCollectionSize() {
         drinkEventCollection.addDrinkEvent(drinkEvent);
         drinkEventCollection.addDrinkEvent(drinkEventA);
-        HashMap allDrinkEvents = drinkEventCollection.getCollection();
+        HashMap allDrinkEvents = drinkEventCollection.getDrinkEventHashMap();
         assertEquals(2, allDrinkEvents.size());
     }
 

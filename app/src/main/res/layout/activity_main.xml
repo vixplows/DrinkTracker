@@ -20,8 +20,6 @@
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent" />
 
-
-
     <Button
         android:id="@+id/add_drink_button"
         android:layout_width="97dp"
