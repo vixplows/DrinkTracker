@@ -60,8 +60,10 @@ public class DrinkEventCollectionTest {
 
     @Test
     public void canGetList() {
+        drinkEventCollection.addDrinkEvent(drinkEvent);
         drinkEventCollection.addDrinkEvent(drinkEventA);
-        assertEquals(1, drinkEventCollection.getList().size());
+        drinkEventCollection.addDrinkEvent(drinkEventB);
+        assertEquals(2, drinkEventCollection.getList().size());
     }
 
 }
