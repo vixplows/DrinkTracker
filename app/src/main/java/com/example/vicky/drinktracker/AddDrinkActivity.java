@@ -6,22 +6,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
-public class AddDrinkActivity extends AppCompatActivity {
+public class AddDrinkActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     TextView addDateEditText;
-    EditText selectTypeEditText;
+    Spinner selectTypeEditText;
     EditText addCostEditText;
     EditText addVolumeEditText;
     EditText addStrengthEditText;
     Button calculateUnitsButton;
     TextView unitsTextView;
     Button submitDrinkButton;
+    DrinkType selectedDrinkType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +32,7 @@ public class AddDrinkActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_drink);
 
         addDateEditText = (EditText)findViewById(R.id.date);
-        selectTypeEditText = (EditText)findViewById(R.id.type);
+        selectTypeEditText = (Spinner)findViewById(R.id.type);
         addCostEditText = (EditText)findViewById(R.id.cost);
         addVolumeEditText = (EditText)findViewById(R.id.volume);
         addStrengthEditText = (EditText)findViewById(R.id.strength);
@@ -37,6 +40,9 @@ public class AddDrinkActivity extends AppCompatActivity {
         unitsTextView = (TextView)findViewById(R.id.units);
         submitDrinkButton = (Button)findViewById(R.id.submit_drink);
         //TODO here before lunch.
+
+        selectTypeEditText.setOnItemSelectedListener(this);
+        this.selectedDrinkType = DrinkType.BEER;
 
     }
 
@@ -62,6 +68,17 @@ public class AddDrinkActivity extends AppCompatActivity {
         startActivity(intent);
 
         Log.d(getClass().toString(), "onSubmitDrinkEventButtonClicked was called");
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        String value = (String) adapterView.getItemAtPosition(i);
+        this.selectedDrinkType = DrinkType.valueOf(value);
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
 }

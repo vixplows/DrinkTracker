@@ -13,5 +13,10 @@
     <string name="submit_drink">SUBMIT DRINK EVENT</string>
     <string name="icon_description">Drinks Glass</string>
     <string name="title_activity_drink_event_details">drink_event_details</string>
+    <string-array name="drink_type_array">
+        <item>BEER</item>
+        <item>WINE</item>
+        <item>SPIRIT</item>
+    </string-array>
 </resources>
 
