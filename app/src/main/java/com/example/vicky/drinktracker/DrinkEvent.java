@@ -10,7 +10,7 @@ import java.util.Calendar;
  * Created by vicky on 10/07/2017.
  */
 
-public class DrinkEvent implements Serializable {
+public class DrinkEvent {
 
     private Calendar date;
     private Drink drink;

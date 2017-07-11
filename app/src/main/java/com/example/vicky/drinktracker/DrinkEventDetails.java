@@ -27,7 +27,7 @@ public class DrinkEventDetails extends AppCompatActivity {
         Gson gson = new Gson();
         DrinkEventCollection drinkEventCollection = gson.fromJson(myDrinks, DrinkEventCollection.class);
 
-        //TODO display information
+        //TODO tuesday night / wednesday morning display information
 
 
 //        calculateUnitsButton = (Button)findViewById(R.id.calculate_units);

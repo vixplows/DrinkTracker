@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by vicky on 10/07/2017.
  */
 
-public class Drink implements Serializable {
+public class Drink {
 
     private DrinkType type;
     private double cost;
