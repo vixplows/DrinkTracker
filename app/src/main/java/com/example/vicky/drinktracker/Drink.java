@@ -50,4 +50,10 @@ public class Drink {
         this.strength = strength;
     }
 
+    // public void calculateUnits(double volume, double strength)
+    // write method to calculate units for given volumen and strength of drink
+    // call method when caluclateUnits button is clicked on Android page and then display
+    // the result in the textbox
+    // should this method be here - or in the drinkEvent class?
+
 }
