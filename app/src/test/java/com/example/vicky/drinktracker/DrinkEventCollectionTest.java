@@ -41,7 +41,6 @@ public class DrinkEventCollectionTest {
         drinkEventB = new DrinkEvent(dateA, drinkB);
     }
 
-//TODO tests failing now as data added to DrinkEventCollection to populate mainactivity page
     @Test
     public void canCheckCollectionSize() {
         drinkEventCollection.addDrinkEvent(drinkEvent);
@@ -51,19 +50,17 @@ public class DrinkEventCollectionTest {
     }
 
     @Test
-    public void canGetTotalDrinkEventsOnDate() {
-        drinkEventCollection.addDrinkEvent(drinkEventA);
+    public void canGetDrinkEventHashMap() {
         drinkEventCollection.addDrinkEvent(drinkEventB);
-        String key = drinkEventA.getKey();
-        assertEquals(2, drinkEventCollection.getTotalDrinkEventsOnDate(key));
+        assertEquals(1, drinkEventCollection.getDrinkEventHashMap().size());
     }
 
     @Test
-    public void canGetList() {
+    public void canGetDrinkDateList() {
         drinkEventCollection.addDrinkEvent(drinkEvent);
         drinkEventCollection.addDrinkEvent(drinkEventA);
         drinkEventCollection.addDrinkEvent(drinkEventB);
-        assertEquals(2, drinkEventCollection.showDateDrinkTotal().size());
+        assertEquals(2, drinkEventCollection.getDrinkDateList().size());
     }
 
 }

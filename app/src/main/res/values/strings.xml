@@ -10,8 +10,8 @@
     <string name="add_date">Add Date</string>
     <string name="select_type">Select Drink Type</string>
     <string name="add_cost">Add Cost</string>
-    <string name="add_volume">Add Volume</string>
-    <string name="add_strength">Add Strength</string>
+    <string name="add_volume">Add Volume (ml)</string>
+    <string name="add_strength">Add Strength (abv)</string>
     <string name="calculate_units">Calculate Units</string>
     <string name="units"></string>
     <string name="submit_drink">SAVE Drink Event</string>

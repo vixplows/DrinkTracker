@@ -27,7 +27,7 @@ public class DrinkEventCollection implements Serializable {
         return drinkEventHashMap;
     }
 
-    public ArrayList<String> showDateDrinkTotal() {
+    public ArrayList<String> getDrinkDateList() {
         ArrayList<String> drinkDateList = new ArrayList<>();
 
         for (String key : drinkEventHashMap.keySet()) {

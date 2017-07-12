@@ -35,7 +35,7 @@ public class MainActivity extends BaseActivity {
         DrinkEventCollection drinkEventCollection = gson.fromJson(myDrinks, DrinkEventCollection.class);
         if (drinkEventCollection == null) drinkEventCollection = new DrinkEventCollection();
 
-        ArrayList<String> myDrinksList = drinkEventCollection.showDateDrinkTotal();
+        ArrayList<String> myDrinksList = drinkEventCollection.getDrinkDateList();
         Log.d("mydrinks is ", myDrinksList.toString());
 
         DrinkEventCollectionAdapter deca = new DrinkEventCollectionAdapter(this, myDrinksList);
