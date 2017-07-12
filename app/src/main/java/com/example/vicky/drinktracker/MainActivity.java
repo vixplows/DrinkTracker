@@ -1,24 +1,17 @@
 package com.example.vicky.drinktracker;
 
-import android.app.Activity;
-import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-
-import static android.R.id.list;
 
 public class MainActivity extends BaseActivity {
 
@@ -42,7 +35,7 @@ public class MainActivity extends BaseActivity {
         DrinkEventCollection drinkEventCollection = gson.fromJson(myDrinks, DrinkEventCollection.class);
         if (drinkEventCollection == null) drinkEventCollection = new DrinkEventCollection();
 
-        ArrayList<String> myDrinksList = drinkEventCollection.getList();
+        ArrayList<String> myDrinksList = drinkEventCollection.showDateDrinkTotal();
         Log.d("mydrinks is ", myDrinksList.toString());
 
         DrinkEventCollectionAdapter deca = new DrinkEventCollectionAdapter(this, myDrinksList);

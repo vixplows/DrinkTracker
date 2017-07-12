@@ -63,7 +63,7 @@ public class DrinkEventCollectionTest {
         drinkEventCollection.addDrinkEvent(drinkEvent);
         drinkEventCollection.addDrinkEvent(drinkEventA);
         drinkEventCollection.addDrinkEvent(drinkEventB);
-        assertEquals(2, drinkEventCollection.getList().size());
+        assertEquals(2, drinkEventCollection.showDateDrinkTotal().size());
     }
 
 }

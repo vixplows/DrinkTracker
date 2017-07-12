@@ -1,7 +1,5 @@
 package com.example.vicky.drinktracker;
 
-import android.view.View;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,12 +27,7 @@ public class DrinkEventCollection implements Serializable {
         return drinkEventHashMap;
     }
 
-    public int getTotalDrinkEventsOnDate(String key) {
-        int listSize = drinkEventHashMap.get(key).size();
-        return listSize;
-    }
-
-    public ArrayList<String> getList() {
+    public ArrayList<String> showDateDrinkTotal() {
         ArrayList<String> drinkDateList = new ArrayList<>();
 
         for (String key : drinkEventHashMap.keySet()) {

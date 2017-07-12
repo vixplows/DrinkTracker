@@ -1,7 +1,5 @@
 package com.example.vicky.drinktracker;
 
-import java.io.Serializable;
-
 /**
  * Created by vicky on 10/07/2017.
  */
@@ -56,11 +54,5 @@ public class Drink {
         double units = (this.strength * this.volume) / 1000;
         return units;
     }
-
-    // public void calculateUnits(double volume, double strength)
-    // write method to calculate units for given volumen and strength of drink
-    // call method when caluclateUnits button is clicked on Android page and then display
-    // the result in the textbox
-    // should this method be here - or in the drinkEvent class?
 
 }
