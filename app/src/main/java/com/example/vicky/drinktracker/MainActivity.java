@@ -1,6 +1,7 @@
 package com.example.vicky.drinktracker;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,12 +18,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import static android.R.id.list;
+
 public class MainActivity extends BaseActivity {
 
     Button addDrinkButton;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -42,9 +45,10 @@ public class MainActivity extends BaseActivity {
         ArrayList<String> myDrinksList = drinkEventCollection.getList();
         Log.d("mydrinks is ", myDrinksList.toString());
 
-
         DrinkEventCollectionAdapter deca = new DrinkEventCollectionAdapter(this, myDrinksList);
-        l.setAdapter(deca); }
+        l.setAdapter(deca);
+
+    }
 
     public void onAddDrinkButtonClicked(View button) {
         Intent intent = new Intent(MainActivity.this, AddDrinkActivity.class);
@@ -52,5 +56,4 @@ public class MainActivity extends BaseActivity {
 
         Log.d(getClass().toString(), "onAddDrinkButtonClicked was called");
     }
-
 }

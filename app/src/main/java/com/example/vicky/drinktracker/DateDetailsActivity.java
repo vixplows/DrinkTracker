@@ -5,4 +5,6 @@ package com.example.vicky.drinktracker;
  */
 
 public class DateDetailsActivity extends BaseActivity {
+
+
 }

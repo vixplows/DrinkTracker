@@ -44,10 +44,4 @@ public class DrinkEventCollection implements Serializable {
         return drinkDateList;
     }
 
-
-    //TODO methods for total cost on that day, total units etc that show on date drink details
-    // activity page but first need to get that activity page set up and running
-
-
-
 }
