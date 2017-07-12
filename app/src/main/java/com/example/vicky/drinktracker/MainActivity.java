@@ -1,11 +1,13 @@
 package com.example.vicky.drinktracker;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -24,7 +26,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        addDrinkButton = (Button)findViewById(R.id.add_drink_button);
+        addDrinkButton = (Button) findViewById(R.id.add_drink_button);
 
         ListView l = (ListView) findViewById(R.id.drinks_list);
 
@@ -37,15 +39,12 @@ public class MainActivity extends BaseActivity {
         DrinkEventCollection drinkEventCollection = gson.fromJson(myDrinks, DrinkEventCollection.class);
         if (drinkEventCollection == null) drinkEventCollection = new DrinkEventCollection();
 
-//        HashMap<Date, ArrayList> sortedMap = new TreeMap<Date, ArrayList>(m);
-
         ArrayList<String> myDrinksList = drinkEventCollection.getList();
         Log.d("mydrinks is ", myDrinksList.toString());
 
-        
+
         DrinkEventCollectionAdapter deca = new DrinkEventCollectionAdapter(this, myDrinksList);
-        l.setAdapter(deca);
-    }
+        l.setAdapter(deca); }
 
     public void onAddDrinkButtonClicked(View button) {
         Intent intent = new Intent(MainActivity.this, AddDrinkActivity.class);
@@ -53,4 +52,5 @@ public class MainActivity extends BaseActivity {
 
         Log.d(getClass().toString(), "onAddDrinkButtonClicked was called");
     }
+
 }

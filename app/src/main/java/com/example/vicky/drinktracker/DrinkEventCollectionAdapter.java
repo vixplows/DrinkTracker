@@ -34,4 +34,3 @@ public class DrinkEventCollectionAdapter extends ArrayAdapter<String> {
     }
 
 }
-
