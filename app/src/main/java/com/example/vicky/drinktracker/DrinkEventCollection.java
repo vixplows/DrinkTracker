@@ -14,12 +14,15 @@ public class DrinkEventCollection implements Serializable {
 
     public void addDrinkEvent(DrinkEvent drinkEvent) {
         String key = drinkEvent.getKey();
+
         if (!drinkEventHashMap.containsKey(key)) {
             ArrayList<DrinkEvent> eventList = new ArrayList<DrinkEvent>();
             eventList.add(drinkEvent);
             drinkEventHashMap.put(key, eventList);
+
         } else {
             drinkEventHashMap.get(key).add(drinkEvent);
+
         }
     }
 
@@ -50,9 +53,11 @@ public class DrinkEventCollection implements Serializable {
 
         for (String key : drinkEventHashMap.keySet()) {
             ArrayList<DrinkEvent> drinkEvents = drinkEventHashMap.get(key);
+
             String totalDrinks = String.valueOf(drinkEvents.size());
             String totalUnits = String.format("%.2f", this.totalUnitsByDay(drinkEvents));
             String costTotal = String.valueOf(this.totalCostByDay(drinkEvents));
+
             drinkDateList.add(key + ": Drinks: " + totalDrinks + " (units = " + totalUnits + ") " + "Spent: £" + costTotal);
         }
         return drinkDateList;
