@@ -4,7 +4,6 @@ import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,7 +16,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import java.util.GregorianCalendar;
 
-public class AddDrinkActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class AddDrinkActivity extends BaseActivity implements AdapterView.OnItemSelectedListener {
 
     TextView addDateEditText;
     Spinner selectTypeSpinner;
@@ -88,7 +87,7 @@ public class AddDrinkActivity extends AppCompatActivity implements AdapterView.O
 
         Toast.makeText(this, "saved", Toast.LENGTH_LONG).show();
 
-        Intent intent = new Intent(AddDrinkActivity.this, DrinkEventDetails.class);
+        Intent intent = new Intent(AddDrinkActivity.this, DrinkEventDetailsActivity.class);
         Bundle extras = new Bundle();
 
         extras.putString("date", String.valueOf(drinkEvent.getKey()));

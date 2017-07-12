@@ -3,14 +3,13 @@ package com.example.vicky.drinktracker;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.widget.TextView;
 
 import com.google.gson.Gson;
 
-public class DrinkEventDetails extends AppCompatActivity {
+public class DrinkEventDetailsActivity extends BaseActivity {
 
     TextView displayDate;
     TextView displayType;

@@ -17,7 +17,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddDrinkActivity" />
-        <activity android:name=".DrinkEventDetails"></activity>
+        <activity android:name=".DrinkEventDetailsActivity" />
+        <activity
+            android:name=".BaseActivity"
+            android:label="@string/title_activity_base"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

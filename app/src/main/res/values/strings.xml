@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">DrinkTracker</string>
+    <string name="homepage">Homepage</string>
     <string name="preference_file_key">DRINKS</string>
     <string name="drink_summary">DRINK SUMMARY</string>
     <string name="event_details">DRINK EVENT DETAILS</string>
@@ -20,5 +21,6 @@
         <item>WINE</item>
         <item>SPIRIT</item>
     </string-array>
+    <string name="title_activity_base">BaseActivity</string>
 </resources>
 
