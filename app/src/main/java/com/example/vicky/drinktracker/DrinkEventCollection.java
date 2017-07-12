@@ -42,8 +42,8 @@ public class DrinkEventCollection implements Serializable {
         for (String key : drinkEventHashMap.keySet()) {
             ArrayList<DrinkEvent> drinkEvents = drinkEventHashMap.get(key);
             String totalDrinks = String.valueOf(drinkEvents.size());
-            String totalUnits = String.valueOf(this.totalUnitsByDay(drinkEvents));
-            drinkDateList.add(key + "Drinks:       " + totalDrinks + " ; Units: " + totalUnits);
+            String totalUnits = String.format("%.2f", this.totalUnitsByDay(drinkEvents));
+            drinkDateList.add(key + "   Drinks: " + totalDrinks + "(units = " + totalUnits);
         }
         return drinkDateList;
     }
