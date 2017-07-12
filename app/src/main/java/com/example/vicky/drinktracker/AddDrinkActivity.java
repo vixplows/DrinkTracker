@@ -95,7 +95,7 @@ public class AddDrinkActivity extends BaseActivity implements AdapterView.OnItem
         extras.putString("cost", String.valueOf(cost));
         extras.putString("volume", String.valueOf(volume));
         extras.putString("strength", String.valueOf(strength));
-        extras.putString("units", String.valueOf(units));
+        extras.putString("units", String.format("%.2f", units));
 
         intent.putExtras(extras);
 
