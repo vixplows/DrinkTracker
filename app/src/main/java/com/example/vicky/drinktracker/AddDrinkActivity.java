@@ -106,7 +106,6 @@ public class AddDrinkActivity extends AppCompatActivity implements AdapterView.O
 
     }
 
-    // This sets string selected from the spinner to enum
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String value = (String) adapterView.getItemAtPosition(i);

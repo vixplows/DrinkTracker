@@ -3,7 +3,7 @@
     <string name="preference_file_key">DRINKS</string>
     <string name="drink_summary">DRINK SUMMARY</string>
     <string name="event_details">DRINK EVENT DETAILS</string>
-    <string name="add_drink_event">Add Drink Event</string>
+    <string name="add_drink_event">ADD DRINK EVENT</string>
     <string name="add_drink">Add Drink</string>
     <string name="add_date">Add Date</string>
     <string name="select_type">Select Drink Type</string>
@@ -12,7 +12,7 @@
     <string name="add_strength">Add Strength</string>
     <string name="calculate_units">Calculate Units</string>
     <string name="units"></string>
-    <string name="submit_drink">SUBMIT DRINK EVENT</string>
+    <string name="submit_drink">SAVE Drink Event</string>
     <string name="icon_description">Drinks Glass</string>
     <string name="title_activity_drink_event_details">drink_event_details</string>
     <string-array name="drink_type_array">
