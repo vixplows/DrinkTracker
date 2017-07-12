@@ -42,8 +42,7 @@ public class MainActivity extends BaseActivity {
         ArrayList<String> myDrinksList = drinkEventCollection.getList();
         Log.d("mydrinks is ", myDrinksList.toString());
 
-
-
+        
         DrinkEventCollectionAdapter deca = new DrinkEventCollectionAdapter(this, myDrinksList);
         l.setAdapter(deca);
     }
