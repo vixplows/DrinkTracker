@@ -12,6 +12,8 @@ import android.widget.ListView;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class MainActivity extends BaseActivity {
 
@@ -29,11 +31,18 @@ public class MainActivity extends BaseActivity {
         SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
         String myDrinks = sharedPref.getString("MyDrinks", "");
 
+
         Gson gson = new Gson();
+
         DrinkEventCollection drinkEventCollection = gson.fromJson(myDrinks, DrinkEventCollection.class);
         if (drinkEventCollection == null) drinkEventCollection = new DrinkEventCollection();
 
+//        HashMap<Date, ArrayList> sortedMap = new TreeMap<Date, ArrayList>(m);
+
         ArrayList<String> myDrinksList = drinkEventCollection.getList();
+        Log.d("mydrinks is ", myDrinksList.toString());
+
+
 
         DrinkEventCollectionAdapter deca = new DrinkEventCollectionAdapter(this, myDrinksList);
         l.setAdapter(deca);
