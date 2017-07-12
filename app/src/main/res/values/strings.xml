@@ -7,9 +7,9 @@
     <string name="date_details">YOUR DRINKING DAY!</string>
     <string name="add_drink_event">ADD DRINK EVENT</string>
     <string name="add_drink">Add Drink</string>
-    <string name="add_date">Add Date</string>
+    <string name="add_date">Add Date (dd/mm/yr)</string>
     <string name="select_type">Select Drink Type</string>
-    <string name="add_cost">Add Cost</string>
+    <string name="add_cost">Add Cost (£0.00)</string>
     <string name="add_volume">Add Volume (ml)</string>
     <string name="add_strength">Add Strength (abv)</string>
     <string name="calculate_units">Calculate Units</string>
