@@ -6,6 +6,7 @@
     <string name="event_details">DRINK EVENT DETAILS</string>
     <string name="date_details">YOUR DRINKING DAY!</string>
     <string name="add_drink_event">ADD DRINK EVENT</string>
+    <string name="drinking_day_details">DRINKING DAY DETAILS</string>
     <string name="add_drink">Add Drink</string>
     <string name="add_date">Add Date (dd/mm/yr)</string>
     <string name="select_type">Select Drink Type</string>

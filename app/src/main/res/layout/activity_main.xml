@@ -31,6 +31,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="16dp"
         android:text="@string/drink_summary"
+        android:textColor="@android:color/black"
         android:textSize="24sp"
         app:layout_constraintHorizontal_bias="0.026"
         app:layout_constraintLeft_toRightOf="@+id/logo_image"
