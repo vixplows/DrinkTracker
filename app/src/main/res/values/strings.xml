@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">DrinkTracker</string>
-    <string name="homepage">Homepage</string>
+    <string name="homepage">Drinks Summary</string>
     <string name="preference_file_key">DRINKS</string>
     <string name="drink_summary">DRINK SUMMARY</string>
     <string name="event_details">DRINK EVENT DETAILS</string>

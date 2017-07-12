@@ -22,10 +22,14 @@ public class BaseActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.main_activity) {
             Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-            return true;
+            startActivity(intent); }
+        { if (item.getItemId() == R.id.add_drink) {
+                Intent intent1 = new Intent(this, AddDrinkActivity.class);
+                startActivity(intent1);
+                return true;
+            }
+            return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 
 }
