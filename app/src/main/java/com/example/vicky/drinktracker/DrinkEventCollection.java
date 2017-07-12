@@ -23,6 +23,15 @@ public class DrinkEventCollection implements Serializable {
         }
     }
 
+    private double totalUnitsByDay(ArrayList<DrinkEvent> drinkEvents) {
+        double unitTotal = 0;
+
+        for (DrinkEvent drinkEvent : drinkEvents) {
+            unitTotal += drinkEvent.getDrink().calculateUnits();
+        }
+        return unitTotal;
+    }
+
     public HashMap getDrinkEventHashMap() {
         return drinkEventHashMap;
     }
@@ -31,10 +40,23 @@ public class DrinkEventCollection implements Serializable {
         ArrayList<String> drinkDateList = new ArrayList<>();
 
         for (String key : drinkEventHashMap.keySet()) {
-            String totalDrinks = String.valueOf(drinkEventHashMap.get(key).size());
-            drinkDateList.add(key + "       " + totalDrinks + " drinks");
+            ArrayList<DrinkEvent> drinkEvents = drinkEventHashMap.get(key);
+            String totalDrinks = String.valueOf(drinkEvents.size());
+            String totalUnits = String.valueOf(this.totalUnitsByDay(drinkEvents));
+            drinkDateList.add(key + "Drinks:       " + totalDrinks + " ; Units: " + totalUnits);
         }
         return drinkDateList;
     }
 
 }
+
+//TODO loop to get back the unittotal for each item in arraylist, by doing the calcuateUnit
+// which needs strength and volume.
+
+// First: be inside the loop that is looping through each key:value pair
+// Second: apply calculateTotalUnitsInDay to each value
+// Third add output to drinkDateList
+// the calculateTotalUnitsInDay method needs to apply the calculateUnits method to
+// each item in the array list
+
+//for
