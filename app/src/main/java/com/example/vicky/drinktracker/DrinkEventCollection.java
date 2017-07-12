@@ -32,6 +32,15 @@ public class DrinkEventCollection implements Serializable {
         return unitTotal;
     }
 
+    private double totalCostByDay(ArrayList<DrinkEvent> drinkEvents) {
+        double costTotal = 0;
+
+        for (DrinkEvent drinkEvent : drinkEvents) {
+            costTotal += drinkEvent.getDrink().getCost();
+        }
+        return costTotal;
+    }
+
     public HashMap getDrinkEventHashMap() {
         return drinkEventHashMap;
     }
@@ -43,7 +52,8 @@ public class DrinkEventCollection implements Serializable {
             ArrayList<DrinkEvent> drinkEvents = drinkEventHashMap.get(key);
             String totalDrinks = String.valueOf(drinkEvents.size());
             String totalUnits = String.format("%.2f", this.totalUnitsByDay(drinkEvents));
-            drinkDateList.add(key + "   Drinks: " + totalDrinks + " (units = " + totalUnits + ")");
+            String costTotal = String.valueOf(this.totalCostByDay(drinkEvents));
+            drinkDateList.add(key + ": Drinks: " + totalDrinks + " (units = " + totalUnits + ") " + "Spent: £" + costTotal);
         }
         return drinkDateList;
     }
