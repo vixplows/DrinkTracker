@@ -43,20 +43,9 @@ public class DrinkEventCollection implements Serializable {
             ArrayList<DrinkEvent> drinkEvents = drinkEventHashMap.get(key);
             String totalDrinks = String.valueOf(drinkEvents.size());
             String totalUnits = String.format("%.2f", this.totalUnitsByDay(drinkEvents));
-            drinkDateList.add(key + "   Drinks: " + totalDrinks + "(units = " + totalUnits);
+            drinkDateList.add(key + "   Drinks: " + totalDrinks + " (units = " + totalUnits + ")");
         }
         return drinkDateList;
     }
 
 }
-
-//TODO loop to get back the unittotal for each item in arraylist, by doing the calcuateUnit
-// which needs strength and volume.
-
-// First: be inside the loop that is looping through each key:value pair
-// Second: apply calculateTotalUnitsInDay to each value
-// Third add output to drinkDateList
-// the calculateTotalUnitsInDay method needs to apply the calculateUnits method to
-// each item in the array list
-
-//for
