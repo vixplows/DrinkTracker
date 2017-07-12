@@ -16,6 +16,7 @@
     <string name="units" />
     <string name="submit_drink">SAVE Drink Event</string>
     <string name="icon_description">Drinks Glass</string>
+    <string name="drink_description">Alcoholic drinks</string>
     <string name="title_activity_drink_event_details">drink_event_details</string>
     <string-array name="drink_type_array">
         <item>BEER</item>

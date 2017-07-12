@@ -92,7 +92,7 @@ public class AddDrinkActivity extends BaseActivity implements AdapterView.OnItem
 
         extras.putString("date", String.valueOf(drinkEvent.getKey()));
         extras.putString("type", String.valueOf(this.selectedDrinkType));
-        extras.putString("cost", String.valueOf(cost));
+        extras.putString("cost", String.format("%.2f", cost));
         extras.putString("volume", String.valueOf(volume));
         extras.putString("strength", String.valueOf(strength));
         extras.putString("units", String.format("%.2f", units));
