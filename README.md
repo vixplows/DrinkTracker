@@ -13,19 +13,9 @@ Working in [Android Studio](https://developer.android.com/studio/index.html), us
 You will need Android Studio 3.2.1
 
 ### Install Android Studio
-```
 https://developer.android.com/studio/
-```
 
 ### Connect your Android device
-Find out how here:
+Find out how here: https://developer.android.com/studio/run/
 
-```
-https://developer.android.com/studio/run/
-```
-
-Or you can run the app on the Android Emulator: 
-
-```
-https://developer.android.com/studio/run/emulator
-```
+Or you can run the app on the Android Emulator: https://developer.android.com/studio/run/emulator
